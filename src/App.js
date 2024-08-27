@@ -1,25 +1,32 @@
-import logo from './logo.svg';
+import React from 'react';
 import './App.css';
+import Buttom from './Buttom';
 
 function App() {
+  const name = "hello";
+  const employees = [
+    { name: "AAA", email: "aaaa@gmail.com", age: 20},
+    { name: "BBB", email: "bbbb@gmail.com", age: 20},
+    { name: "CCC", email: "cccc@gmail.com", age: 20}
+  ];
+  
+  console.log(employees);
+  
   return (
+    <>
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <h1>{name}</h1> {/* Display the name variable */}
+      {employees.map((em, index) => (
+        <li key={index}>
+          ชื่อพนักงาน: {em.name} | อีเมล์: {em.email} | อายุ: {em.age}
+        </li>
+      ))}
+      <h1>ดีจ้า Satayu</h1>
+      <Buttom text="ja" />
+      <Buttom text="mai" />
     </div>
+    </>
   );
 }
 
-export default App;
+export default App; // Ensure this line is included
